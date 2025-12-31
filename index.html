@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forest Carbon Stock Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- LEFT PANEL -->
+    <div class="sidebar">
+      <h2>🌍 Forest Carbon Atlas</h2>
+      <p class="subtitle">Interactive Carbon Stock Dashboard</p>
+
+      <label>🌐 Region</label>
+      <select id="region">
+        <option value="">-- Select Region --</option>
+        <option value="south">South India</option>
+        <option value="northeast">Northeast India</option>
+        <option value="central">Central India</option>
+      </select>
+
+      <label>📍 Location</label>
+      <select id="place">
+        <option value="">-- Select Location --</option>
+      </select>
+
+      <button onclick="loadMap()">🚀 Load Carbon Map</button>
+
+      <div class="footer">
+        <span>📊 Unit: t/ha</span><br>
+        <span>🛰️ Google Earth Engine</span>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="map-panel">
+      <iframe id="mapFrame" src="" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <!-- CARBON STOCK LEGEND (Satpura NP) -->
+<div class="carbon-legend">
+  <div class="legend-title">Predicted Carbon Stock (t/ha)</div>
+
+  <div class="legend-item">
+    <span class="legend-color low"></span>
+    <span> < 50 (Low)</span>
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-color medium"></span>
+    <span>50 - 100 (Moderate)</span>
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-color high"></span>
+    <span> > 100 (High)</span>
+  </div>
+</div>
+
+</body>
+</html>
